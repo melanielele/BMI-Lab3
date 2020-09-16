@@ -5,8 +5,6 @@ Libraries needed:
 
 Usage:
 
-Use different py file according to the dataset you are testing, because the preprocessing step is different
-
 The program should be executable with at least 3 parameters: the name of the dataset file, k, and the name of the output file. For example, to run the program with iris.data.txt, 3 clusters and ‘outputFile’: 
 
     python kMeansClustering.py water-treatment.data 3 outputFile

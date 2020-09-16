@@ -16,7 +16,7 @@ def initializeClusterCenter(data, k):
 
     # randomly pick k data points as cluster centers
     index = np.random.randint(len(dataCopy))
-    print(index)
+    #print(index)
     centroid = np.array([dataCopy[index]])
     #print(centroid)
     dataCopy = np.delete(dataCopy, index, 0) # delete ones just picked
@@ -90,13 +90,15 @@ for i in range(len(X)):
 	mi = centroids[clusters[i]]
 	dis = pow(np.linalg.norm(mi-X[i]),2)
 	sse +=dis
+print('SSE: ')
 print(sse)
 
 
 #calculate
 silhouette_avg = silhouette_score(X, clusters)
+print('silhouette_avg: ')
 print(silhouette_avg)
-df = df.append(pd.Series(['sse',sse,'silhouette_avg',silhouette_avg,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', ' ',' ',' ',' ',' ','','','','','','','','','','','','','','','','','','','',''],index=df.columns),ignore_index=True)
+#df = df.append(pd.Series(['sse',sse,'silhouette_avg',silhouette_avg,' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ', ' ',' ',' ',' ',' ','','','','','','','','','','','','','','','','','','','',''],index=df.columns),ignore_index=True)
 df.to_csv(outputFile, sep=',')
 # Print results
 #print("Centroid values")
